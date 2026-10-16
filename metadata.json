@@ -1,0 +1,6 @@
+{
+  "name": "A-111 : Retro Terminal Interactive RPG",
+  "description": "An authentic retro CRT terminal interactive text RPG inspired by Rick and Morty's Roy arcade game, featuring 5 deep survival storylines, invisible AI failover, dynamic biomes, sound synthesis, and itch.io export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

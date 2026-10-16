@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Share Tech Mono', 'VT323', monospace;
+    background-color: #000000;
+    color: #00ff00;
+  }
+}
+
+/* CRT Screen Effects */
+.crt-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.crt-glow {
+  text-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
+.crt-glow-subtle {
+  text-shadow: 0 0 3px currentColor;
+}
+
+.box-glow {
+  box-shadow: 0 0 12px currentColor, inset 0 0 8px currentColor;
+}
+
+.box-glow-subtle {
+  box-shadow: 0 0 6px currentColor;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.985; }
+  50% { opacity: 1; }
+  100% { opacity: 0.992; }
+}
+
+.animate-flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: cursor-blink 0.8s infinite;
+}
+
+/* Custom scrollbar for retro terminal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8);
+  border-left: 1px solid rgba(0, 255, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: currentColor;
+  opacity: 0.6;
+}
+
